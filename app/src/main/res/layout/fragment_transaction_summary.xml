@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    tools:context=".presentation.summary.TransactionSummaryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/nav_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_arrow_back"
+            android:id="@+id/summary_nav_back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:theme="@style/General.Text.Style"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/summary_nav_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/transaction_summary"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="@string/account_number"
+            android:textColor="@color/navy_blue"
+            android:textSize="14sp"
+            android:theme="@style/General.Text.Style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:id="@+id/acct_no"
+            android:theme="@style/General.Text.Style"
+            android:layout_marginBottom="15dp"
+            android:text="@string/_9861"/>
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:id="@+id/summary_acct_name"
+            android:text="@string/ademola_john"
+            app:chipBackgroundColor="#BCD2E8"
+            app:chipIcon="@drawable/ic_validate_icon"
+            app:chipStrokeColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="@string/amount_text"
+            android:textColor="@color/navy_blue"
+            android:textSize="14sp"
+            android:theme="@style/General.Text.Style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:id="@+id/summary_amount"
+            android:theme="@style/General.Text.Style"
+            android:layout_marginBottom="15dp"
+            android:text="@string/n100_000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="@string/transaction_fee"
+            android:textColor="@color/navy_blue"
+            android:textSize="14sp"
+            android:theme="@style/General.Text.Style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:id="@+id/transaction_fee"
+            android:theme="@style/General.Text.Style"
+            android:layout_marginBottom="15dp"
+            android:text="@string/_10_00"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="@string/remark"
+            android:textColor="@color/navy_blue"
+            android:textSize="14sp"
+            android:theme="@style/General.Text.Style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:id="@+id/summary_remark"
+            android:theme="@style/General.Text.Style"
+            android:layout_marginBottom="15dp"
+            android:text="@string/enjoy_your_birthday"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/save_as_beneficiary"
+            tools:ignore="NestedWeights" />
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:layout_width="wrap_content"
+            android:enabled="true"
+            android:id="@+id/summary_beneficiary_switch"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirm_button"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        app:cornerRadius="10dp"
+        android:text="@string/confirm"
+        android:layout_height="56dp"/>
+
+</LinearLayout>

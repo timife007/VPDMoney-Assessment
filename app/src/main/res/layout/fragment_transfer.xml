@@ -16,6 +16,7 @@
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:id="@+id/back_nav"
             android:clickable="true"
             android:contentDescription="@string/arrow_back"
             android:focusable="true"
