@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/transaction_item_icon"
+        android:src="@drawable/ic_sent"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:id="@+id/transaction_history_detail"
+            android:text="@string/sent_to_john_oluwafemi"
+            android:textSize="13sp"
+            android:gravity="top"
+            android:theme="@style/General.Text.Style"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:height="22dp"
+            android:id="@+id/transaction_date"
+            android:gravity="bottom"
+            android:layout_height="wrap_content"
+            android:text="@string/_2_20_22"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/money_involved"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="top"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:textColor="@color/navy_blue"
+            android:text="@string/_65000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:id="@+id/history_date"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="@string/_7_35pm"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

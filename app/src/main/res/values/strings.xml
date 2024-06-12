@@ -43,4 +43,17 @@
     <string name="transaction_fee">TRANSACTION FEE</string>
     <string name="enjoy_your_birthday">Enjoy your Birthday</string>
     <string name="confirm">Confirm</string>
+    <string name="hello">Hello</string>
+    <string name="johnson">Johnson,</string>
+    <string name="total_balance">Total Balance</string>
+    <string name="naira_symbol">₦</string>
+    <string name="n34_950"> 34,950</string>
+    <string name="card_number">****   ****   ****  7566</string>
+    <string name="recent_transactions">Recent Transactions</string>
+    <string name="transaction_item_icon">Transaction Item icon</string>
+    <string name="sent_to_john_oluwafemi">Sent to John Oluwafemi</string>
+    <string name="_2_20_22">2/20/22</string>
+    <string name="_65000">+65000</string>
+    <string name="_7_35pm">7:35pm</string>
+    <string name="swipe_indicator">swipe indicator</string>
 </resources>
