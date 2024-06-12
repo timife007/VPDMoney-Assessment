@@ -2,7 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.VPDMoneyAssessment" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/navy_blue</item>
+        <item name="fontWeight">10</item>
+        <item name="textFillColor">@color/black</item>
+        <item name="hintTextColor">@color/light_grey</item>
+    </style>
+    <style name="General.Text.Style" parent="MaterialAlertDialog.Material3.Body.Text">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Theme.VPDMoneyAssessment" parent="Base.Theme.VPDMoneyAssessment" />
