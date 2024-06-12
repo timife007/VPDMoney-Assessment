@@ -23,4 +23,17 @@
     <string name="ademola_john">Ademola John</string>
     <string name="list_of_accounts">List of Accounts</string>
     <string name="arrow_back">Arrow Back</string>
+    <string name="transfer_funds">Transfer Funds</string>
+    <string name="daily_transfer_limit">Daily Transfer Limit: </string>
+    <string name="change_limit">Change Limit</string>
+    <string name="account_number">ACCOUNT NUMBER</string>
+    <string name="amount">₦ 0.00</string>
+    <string name="amount_text">AMOUNT</string>
+    <string name="bal_n1_000_000">Bal: ₦ 1,000,000</string>
+    <string name="n100_000">₦ 100,000</string>
+    <string name="enter_a_remark">Enter a remark</string>
+    <string name="remark">REMARK</string>
+    <string name="min_of_3_characters">Min of 3 characters</string>
+    <string name="save_as_beneficiary">Save as beneficiary</string>
+    <string name="continue_">Continue</string>
 </resources>

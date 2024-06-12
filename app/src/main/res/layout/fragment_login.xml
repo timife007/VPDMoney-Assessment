@@ -111,6 +111,7 @@
         android:layout_height="wrap_content">
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
+            android:id="@+id/login_button"
             app:cornerRadius="10dp"
             android:text="@string/login"
             android:layout_height="56dp"/>
