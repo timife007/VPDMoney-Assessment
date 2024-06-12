@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.recyclerview)
     ksp(libs.androidx.roomCompiler)
     implementation(libs.coroutineCore)
     implementation(libs.coroutineAndroid)

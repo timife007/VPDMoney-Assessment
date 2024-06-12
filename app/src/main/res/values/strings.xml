@@ -18,4 +18,9 @@
     <string name="click_to_setup_biometrics">Click to setup Fingerprint</string>
     <string name="login">Login</string>
     <string name="are_you_a_new_user_create_your_account">Are you a new user? Create your account</string>
+    <string name="_19861">*****19861</string>
+    <string name="n500_000">N500,000</string>
+    <string name="ademola_john">Ademola John</string>
+    <string name="list_of_accounts">List of Accounts</string>
+    <string name="arrow_back">Arrow Back</string>
 </resources>
