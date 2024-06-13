@@ -26,7 +26,7 @@
         android:theme="@style/General.Text.Style" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
+        android:id="@+id/accounts_recyclerview"
         android:name="com.timife.vpdmoneyassessment.presentation.accounts.AccountsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

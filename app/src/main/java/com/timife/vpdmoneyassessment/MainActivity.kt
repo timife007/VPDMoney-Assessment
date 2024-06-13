@@ -7,8 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.timife.vpdmoneyassessment.databinding.ActivityMainBinding
 import com.timife.vpdmoneyassessment.navigation.navigationGraph
 
@@ -19,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -27,8 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
         navController = findNavController(R.id.nav_host_fragment)
 
-        val navView: BottomNavigationView = binding.navView
         navController.graph = navigationGraph(navController)
-        navView.setupWithNavController(navController)
+
     }
 }

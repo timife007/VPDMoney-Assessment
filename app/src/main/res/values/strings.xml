@@ -59,4 +59,5 @@
     <string name="transfer">Transfer</string>
     <string name="saved_accounts">Saved Accounts</string>
     <string name="dashboard">Dashboard</string>
+    <string name="accounts">Accounts</string>
 </resources>

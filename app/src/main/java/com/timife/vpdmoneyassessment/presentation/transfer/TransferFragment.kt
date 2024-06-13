@@ -1,17 +1,17 @@
 package com.timife.vpdmoneyassessment.presentation.transfer
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.timife.vpdmoneyassessment.R
-import com.timife.vpdmoneyassessment.navigation.Dashboard
+import com.timife.vpdmoneyassessment.databinding.FragmentTransferBinding
 import com.timife.vpdmoneyassessment.navigation.TransactionSummary
 
 class TransferFragment : Fragment() {
+    private lateinit var transferBinding: FragmentTransferBinding
 
     companion object {
         fun newInstance() = TransferFragment()
@@ -29,7 +29,9 @@ class TransferFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_transfer, container, false)
+        transferBinding = FragmentTransferBinding.inflate(inflater, container, false)
+        transferBinding.continueButton.setOnClickListener { navigateToSummary() }
+        return transferBinding.root
     }
 
     private fun navigateToSummary() {

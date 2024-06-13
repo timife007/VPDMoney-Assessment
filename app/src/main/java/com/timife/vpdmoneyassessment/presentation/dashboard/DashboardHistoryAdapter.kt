@@ -40,7 +40,6 @@ class DashboardHistoryAdapter (
                     }
                 }
                 append(item.transactionStatus.name)
-
             }
             holder.historyDate.text = item.date
             holder.time.text = item.time
