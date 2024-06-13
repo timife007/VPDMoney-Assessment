@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.timife.vpdmoneyassessment.data.mocks.mockAccounts
 import com.timife.vpdmoneyassessment.databinding.FragmentAccountsListBinding
 
 /**
@@ -24,7 +25,7 @@ class AccountsFragment : Fragment() {
 
         // Set the adapter
         with(recyclerView) {
-            adapter = AccountsRecyclerViewAdapter(mockData)
+            adapter = AccountsRecyclerViewAdapter(mockAccounts)
         }
         return accountsBinding.root
     }

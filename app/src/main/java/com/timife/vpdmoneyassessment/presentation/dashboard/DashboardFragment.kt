@@ -7,10 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.timife.vpdmoneyassessment.data.mocks.mockAccounts
+import com.timife.vpdmoneyassessment.data.mocks.mockTransaction
 import com.timife.vpdmoneyassessment.databinding.FragmentDashboardBinding
 import com.timife.vpdmoneyassessment.navigation.AccountManagement
 import com.timife.vpdmoneyassessment.navigation.Transfer
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DashboardFragment : Fragment() {
     private lateinit var dashboardBinding: FragmentDashboardBinding
 
@@ -24,6 +28,11 @@ class DashboardFragment : Fragment() {
         val recyclerView = dashboardBinding.dashboardRecyclerView
         dashboardBinding.transferButton.setOnClickListener { navigateToTransfer() }
         dashboardBinding.accountsButton.setOnClickListener { navigateToAccounts() }
+        var totalBalance = 0
+        mockAccounts.forEach {
+            totalBalance += it.accountBalance.toInt()
+        }
+        dashboardBinding.totalAcctBalance.text = totalBalance.toString()
 
         // Set the adapter
         with(recyclerView) {

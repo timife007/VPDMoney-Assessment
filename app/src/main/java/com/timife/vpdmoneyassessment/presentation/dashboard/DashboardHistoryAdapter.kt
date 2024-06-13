@@ -5,6 +5,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.timife.vpdmoneyassessment.R
+import com.timife.vpdmoneyassessment.data.mocks.Transaction
+import com.timife.vpdmoneyassessment.data.mocks.TransactionStatus
+import com.timife.vpdmoneyassessment.data.mocks.TransactionType
 import com.timife.vpdmoneyassessment.databinding.TransactHistoryListItemBinding
 
 class DashboardHistoryAdapter (

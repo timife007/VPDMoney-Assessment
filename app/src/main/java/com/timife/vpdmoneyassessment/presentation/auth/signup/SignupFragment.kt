@@ -14,7 +14,9 @@ import com.google.firebase.auth.auth
 import com.timife.vpdmoneyassessment.databinding.FragmentSignupBinding
 import com.timife.vpdmoneyassessment.navigation.Login
 import com.timife.vpdmoneyassessment.presentation.auth.Validation
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignupFragment : Fragment() {
 
     private lateinit var signupBinding: FragmentSignupBinding

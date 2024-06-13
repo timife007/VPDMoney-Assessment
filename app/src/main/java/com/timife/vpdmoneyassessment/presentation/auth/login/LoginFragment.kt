@@ -15,7 +15,9 @@ import com.timife.vpdmoneyassessment.databinding.FragmentLoginBinding
 import com.timife.vpdmoneyassessment.navigation.Dashboard
 import com.timife.vpdmoneyassessment.navigation.Signup
 import com.timife.vpdmoneyassessment.presentation.auth.Validation.areLoginCredentialsValid
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment() : Fragment() {
 
     private val viewModel: LoginViewModel by viewModels()

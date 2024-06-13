@@ -9,7 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.timife.vpdmoneyassessment.databinding.FragmentTransferBinding
 import com.timife.vpdmoneyassessment.navigation.TransactionSummary
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TransferFragment : Fragment() {
     private lateinit var transferBinding: FragmentTransferBinding
 
