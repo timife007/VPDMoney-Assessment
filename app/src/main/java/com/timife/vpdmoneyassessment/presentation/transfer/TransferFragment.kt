@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.timife.vpdmoneyassessment.R
+import com.timife.vpdmoneyassessment.navigation.Dashboard
+import com.timife.vpdmoneyassessment.navigation.TransactionSummary
 
 class TransferFragment : Fragment() {
 
@@ -27,5 +30,9 @@ class TransferFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.fragment_transfer, container, false)
+    }
+
+    private fun navigateToSummary() {
+        findNavController().navigate(TransactionSummary)
     }
 }

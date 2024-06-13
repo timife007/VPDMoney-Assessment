@@ -56,4 +56,7 @@
     <string name="_65000">+65000</string>
     <string name="_7_35pm">7:35pm</string>
     <string name="swipe_indicator">swipe indicator</string>
+    <string name="transfer">Transfer</string>
+    <string name="saved_accounts">Saved Accounts</string>
+    <string name="dashboard">Dashboard</string>
 </resources>

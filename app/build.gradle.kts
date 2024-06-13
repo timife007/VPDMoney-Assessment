@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -66,8 +67,7 @@ dependencies {
     ksp(libs.dagger.hilt.compiler)
     implementation(libs.hilt)
     implementation(libs.timber)
-
-
+    implementation(libs.serialization)
 
 
     testImplementation(libs.junit)

@@ -7,6 +7,7 @@
 
     <ImageView
         android:layout_width="48dp"
+        android:id="@+id/transaction_icon"
         android:layout_height="48dp"
         android:contentDescription="@string/transaction_item_icon"
         android:src="@drawable/ic_sent"/>
@@ -21,14 +22,15 @@
             android:layout_height="22dp"
             android:id="@+id/transaction_history_detail"
             android:text="@string/sent_to_john_oluwafemi"
-            android:textSize="13sp"
-            android:gravity="top"
+            android:textSize="11sp"
+            android:gravity="center"
             android:theme="@style/General.Text.Style"/>
         <TextView
             android:layout_width="wrap_content"
             android:height="22dp"
+            android:textSize="11sp"
             android:id="@+id/transaction_date"
-            android:gravity="bottom"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:text="@string/_2_20_22"/>
     </LinearLayout>
@@ -43,15 +45,16 @@
             android:gravity="top"
             android:layout_weight="1"
             android:layout_height="0dp"
+            android:textSize="14sp"
             android:textColor="@color/navy_blue"
             android:text="@string/_65000"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:id="@+id/history_date"
+            android:id="@+id/history_time"
             android:gravity="center"
             android:layout_gravity="center"
-            android:textSize="11sp"
+            android:textSize="10sp"
             android:text="@string/_7_35pm"/>
     </LinearLayout>
 
