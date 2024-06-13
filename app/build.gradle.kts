@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -68,7 +69,8 @@ dependencies {
     implementation(libs.hilt)
     implementation(libs.timber)
     implementation(libs.serialization)
-
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

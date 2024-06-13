@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import com.timife.vpdmoneyassessment.databinding.FragmentTransactionSummaryBinding
 import com.timife.vpdmoneyassessment.navigation.Dashboard
 
@@ -24,6 +27,7 @@ class TransactionSummaryFragment : Fragment() {
         summaryBinding.confirmButton.setOnClickListener {
             navigateToDashboard()
         }
+
         return summaryBinding.root
     }
 

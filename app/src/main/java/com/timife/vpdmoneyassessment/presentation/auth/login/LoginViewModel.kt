@@ -1,4 +1,4 @@
-package com.timife.vpdmoneyassessment.presentation.login
+package com.timife.vpdmoneyassessment.presentation.auth.login
 
 import androidx.lifecycle.ViewModel
 
