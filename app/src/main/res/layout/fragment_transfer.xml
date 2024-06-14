@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_margin="15dp"
         android:id="@+id/app_bar"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
+            android:id="@+id/back_nav"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/back_nav"
             android:clickable="true"
             android:contentDescription="@string/arrow_back"
             android:focusable="true"
@@ -31,20 +32,22 @@
             android:textSize="20sp"
             android:theme="@style/General.Text.Style" />
     </LinearLayout>
+
     <ScrollView
-        android:layout_width="match_parent"
         android:id="@+id/scroll_view"
-        android:scrollbarSize="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:fadeScrollbars="true"
-        android:layout_height="match_parent">
+        android:scrollbarSize="3dp">
+
         <LinearLayout
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="2dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical"
             tools:context=".presentation.transfer.TransferFragment">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -85,9 +88,9 @@
                     android:id="@+id/limit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:gravity="center"
                     android:clickable="true"
                     android:focusable="true"
+                    android:gravity="center"
                     android:text="@string/change_limit"
                     android:textColor="@color/navy_blue"
                     android:textSize="12sp"
@@ -106,7 +109,40 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/account_number"
+                    android:text="SOURCE ACCOUNT"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="14sp"
+                    android:theme="@style/General.Text.Style" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/src_acct_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/src_acct_text_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/faded_grey"
+                        android:paddingStart="10dp"
+                        android:theme="@style/General.Text.Style"
+                        android:paddingEnd="10dp"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/destination_account"
                     android:textColor="@color/navy_blue"
                     android:textSize="14sp"
                     android:theme="@style/General.Text.Style" />
@@ -114,25 +150,19 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/acct_no_input_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="56dp"
                     android:layout_marginTop="10dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <AutoCompleteTextView
                         android:id="@+id/acct_no_text_input"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/faded_grey"
-                        android:hint="Account Number" />
+                        android:paddingStart="10dp"
+                        android:theme="@style/General.Text.Style"
+                        android:paddingEnd="10dp"
+                        android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.chip.Chip
-                    android:layout_width="wrap_content"
-                    android:layout_height="56dp"
-                    android:id="@+id/account_user_chip"
-                    android:text="@string/ademola_john"
-                    app:chipBackgroundColor="#BCD2E8"
-                    app:chipIcon="@drawable/ic_validate_icon"
-                    app:chipStrokeColor="@color/white" />
 
             </LinearLayout>
 
@@ -180,6 +210,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -223,31 +254,35 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/save_as_beneficiary"
                     tools:ignore="NestedWeights" />
+
                 <com.google.android.material.materialswitch.MaterialSwitch
-                    android:layout_width="wrap_content"
                     android:id="@+id/beneficiary_switch"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/continue_button"
-                android:layout_marginTop="50dp"
                 android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginBottom="40dp"
-                app:cornerRadius="10dp"
                 android:text="@string/continue_"
-                android:layout_height="56dp"/>
+                app:cornerRadius="10dp" />
 
         </LinearLayout>
     </ScrollView>

@@ -66,4 +66,6 @@
     <string name="have_an_existing_account">Have an Existing Account?</string>
     <string name="create_your_account">Create your Account</string>
     <string name="oa">OA</string>
+    <string name="destination_account">DESTINATION ACCOUNT</string>
+    <string name="account_number_hint">Account Number</string>
 </resources>

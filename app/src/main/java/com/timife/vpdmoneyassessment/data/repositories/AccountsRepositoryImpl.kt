@@ -83,4 +83,8 @@ class AccountsRepositoryImpl @Inject constructor(
         Log.d("BIG ERROR", accountEntities.toString())
         accountsDao.upsertAccounts(accountEntities)
     }
+
+    override suspend fun getAccountDetail(accountNumber: String) : Account{
+        return accountsDao.getAccount(accountNumber).toAccount()
+    }
 }

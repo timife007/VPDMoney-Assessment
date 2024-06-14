@@ -19,4 +19,6 @@ interface AccountsRepository {
     fun getAllTransactions(): Flow<Resource<List<Transaction>>>
 
     suspend fun saveAccounts(accounts:List<Account>)
+
+    suspend fun getAccountDetail(accountNumber:String): Account
 }
