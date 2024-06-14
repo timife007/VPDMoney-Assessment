@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="15dp"
         android:id="@+id/app_bar"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,15 +33,15 @@
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        app:layout_constraintStart_toStartOf="@id/app_bar"
-        app:layout_constraintEnd_toEndOf="@id/app_bar"
-        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        android:id="@+id/scroll_view"
         android:scrollbarSize="3dp"
         android:fadeScrollbars="true"
-        android:layout_marginTop="110dp"
         android:layout_height="match_parent">
         <LinearLayout
-            android:layout_margin="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="2dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,16 +67,17 @@
                         android:layout_height="24dp"
                         android:text="@string/daily_transfer_limit"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/limit_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="24dp"
                         android:layout_gravity="top"
+                        android:layout_marginStart="5dp"
                         android:text="@string/n100_000"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
 
@@ -90,7 +90,7 @@
                     android:focusable="true"
                     android:text="@string/change_limit"
                     android:textColor="@color/navy_blue"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:theme="@style/General.Text.Style"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -161,7 +161,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/bal_n1_000_000"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -251,4 +251,4 @@
 
         </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
