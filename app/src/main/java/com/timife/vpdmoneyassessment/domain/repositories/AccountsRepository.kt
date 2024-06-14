@@ -17,4 +17,6 @@ interface AccountsRepository {
     fun getAllAccounts(): Flow<Resource<List<Account>>>
 
     fun getAllTransactions(): Flow<Resource<List<Transaction>>>
+
+    suspend fun saveAccounts(accounts:List<Account>)
 }

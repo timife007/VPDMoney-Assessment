@@ -19,13 +19,25 @@ enum class TransactionType{
     Recharge
 }
 
-//val mockTransaction = mutableListOf(
-//    Transaction(
-//        TransactionStatus.SUCCESSFUL,
-//        TransactionType.Transfer, "John", "2/10/22", "7:35pm","65000"),
-//    Transaction(
-//        TransactionStatus.PENDING,
-//        TransactionType.Transfer,"Aeolus", "2/10/22", "7:35pm","65000"),
+val mockTransaction = mutableListOf(
+    Transaction("John", "Pius",
+        TransactionStatus.SUCCESSFUL,  "2/10/22", "7:35pm","65000"),
+    Transaction("John", "Pius",
+        TransactionStatus.SUCCESSFUL,  "2/10/22", "7:35pm","65000"),
+    Transaction("John", "Pius",
+        TransactionStatus.SUCCESSFUL,  "2/10/22", "7:35pm","65000"),
+    Transaction("John", "Pius",
+        TransactionStatus.SUCCESSFUL,  "2/10/22", "7:35pm","65000"),
+    Transaction("John", "Pius",
+        TransactionStatus.SUCCESSFUL,  "2/10/22", "7:35pm","65000"),
+    Transaction("John", "Pius",
+        TransactionStatus.SUCCESSFUL,  "2/10/22", "7:35pm","65000"),
+    Transaction("John", "Pius",
+        TransactionStatus.SUCCESSFUL,  "2/10/22", "7:35pm","65000"),
+    Transaction("John", "Pius",
+        TransactionStatus.SUCCESSFUL,  "2/10/22", "7:35pm","65000"),
+    Transaction("John", "Pius",
+        TransactionStatus.SUCCESSFUL,  "2/10/22", "7:35pm","65000")
 //    Transaction(
 //        TransactionStatus.FAILED,
 //        TransactionType.Transfer,"Jane", "2/10/22", "7:35pm","65000"),
@@ -49,4 +61,4 @@ enum class TransactionType{
 //        TransactionStatus.SUCCESSFUL,
 //        TransactionType.Recharge,"Jasmine", "2/10/22", "7:35pm","65000"),
 //    Transaction(TransactionStatus.FAILED, TransactionType.Transfer,"Paul", "2/10/22", "7:35pm","65000")
-//)
+)

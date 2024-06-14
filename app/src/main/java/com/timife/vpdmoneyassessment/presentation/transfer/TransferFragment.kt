@@ -15,17 +15,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class TransferFragment : Fragment() {
     private lateinit var transferBinding: FragmentTransferBinding
 
-    companion object {
-        fun newInstance() = TransferFragment()
-    }
-
     private val viewModel: TransferViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

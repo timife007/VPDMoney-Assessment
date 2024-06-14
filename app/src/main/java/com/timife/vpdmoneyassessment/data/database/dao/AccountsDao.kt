@@ -13,7 +13,7 @@ interface AccountsDao {
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun upsertAccounts(
+    suspend fun upsertAccounts(
         accounts: List<AccountEntity>,
     )
 

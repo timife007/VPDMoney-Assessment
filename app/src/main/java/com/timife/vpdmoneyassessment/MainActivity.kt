@@ -34,6 +34,5 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host_fragment)
 
         navController.graph = navigationGraph(navController)
-
     }
 }

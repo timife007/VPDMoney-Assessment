@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.timife.vpdmoneyassessment.R
 import com.timife.vpdmoneyassessment.data.mocks.Transaction
 import com.timife.vpdmoneyassessment.data.mocks.TransactionStatus
-import com.timife.vpdmoneyassessment.data.mocks.TransactionType
 import com.timife.vpdmoneyassessment.databinding.TransactHistoryListItemBinding
 
 class DashboardHistoryAdapter (
@@ -29,19 +28,6 @@ class DashboardHistoryAdapter (
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val item = values[position]
             holder.transactionStatus.text = buildString {
-
-                when(item.transactionType){
-                    TransactionType.Transfer ->{
-                        append("Transfer to ")
-                        append(item.userName + " ")
-                    }
-                    TransactionType.Recharge ->{
-                        append("Airtime Recharge ")
-                    }
-                    TransactionType.Electricity ->{
-                        append("Electricity Payment ")
-                    }
-                }
                 append(item.transactionStatus.name)
             }
             holder.historyDate.text = item.date
@@ -73,9 +59,6 @@ class DashboardHistoryAdapter (
             val time: TextView = binding.historyTime
             val icon = binding.transactionIcon
 
-            override fun toString(): String {
-                return super.toString() + " '" + transactionStatus.text + "'"
-            }
         }
 
     }

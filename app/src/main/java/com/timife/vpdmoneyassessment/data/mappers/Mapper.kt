@@ -11,7 +11,8 @@ fun Account.toAccountEntity(): AccountEntity {
         accountNumber = accountNumber,
         accountFirstName = accountFirstName,
         accountLastName = accountLastName,
-        accountBalance = accountBalance
+        accountBalance = accountBalance,
+        bank = bank
     )
 }
 
@@ -20,7 +21,8 @@ fun AccountEntity.toAccount(): Account {
         accountNumber = accountNumber,
         accountFirstName = accountFirstName,
         accountLastName = accountLastName,
-        accountBalance = accountBalance
+        accountBalance = accountBalance,
+        bank = bank
     )
 }
 

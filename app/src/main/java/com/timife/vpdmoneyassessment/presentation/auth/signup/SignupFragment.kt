@@ -89,6 +89,7 @@ class SignupFragment : Fragment() {
                                     "Account successfully created",
                                     Toast.LENGTH_LONG
                                 ).show()
+                                viewModel.saveAccounts()
                             } else {
                                 Toast.makeText(
                                     requireContext(),

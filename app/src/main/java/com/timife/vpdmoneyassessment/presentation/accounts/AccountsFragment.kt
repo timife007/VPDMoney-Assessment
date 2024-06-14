@@ -4,16 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.timife.vpdmoneyassessment.data.mocks.mockAccounts
+import androidx.fragment.app.viewModels
 import com.timife.vpdmoneyassessment.databinding.FragmentAccountsListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A fragment representing a list of Items.
  */
+@AndroidEntryPoint
 class AccountsFragment : Fragment() {
 
     private lateinit var accountsBinding: FragmentAccountsListBinding
+
+    private val viewModel: AccountsViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -23,25 +28,21 @@ class AccountsFragment : Fragment() {
         accountsBinding = FragmentAccountsListBinding.inflate(inflater, container, false)
         val recyclerView = accountsBinding.accountsRecyclerview
 
-        // Set the adapter
-        with(recyclerView) {
-            adapter = AccountsRecyclerViewAdapter(mockAccounts)
-        }
-        return accountsBinding.root
-    }
-
-    companion object {
-
-        // TODO: Customize parameter argument names
-        const val ARG_COLUMN_COUNT = "column-count"
-
-        // TODO: Customize parameter initialization
-        @JvmStatic
-        fun newInstance(columnCount: Int) =
-            AccountsFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_COLUMN_COUNT, columnCount)
+        viewModel.accounts.observe(viewLifecycleOwner) {
+            if (it.loading) {
+                accountsBinding.accountListProgress.visibility = View.VISIBLE
+            } else if (it.data != null) {
+                with(recyclerView) {
+                    adapter = AccountsRecyclerViewAdapter(it.data)
                 }
+
+                accountsBinding.accountListProgress.visibility = View.GONE
+            } else {
+                accountsBinding.accountListProgress.visibility = View.GONE
+                Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
             }
+        }
+
+        return accountsBinding.root
     }
 }
