@@ -2,13 +2,19 @@ package com.timife.vpdmoneyassessment.domain.repositories
 
 import com.timife.vpdmoneyassessment.data.mocks.Account
 import com.timife.vpdmoneyassessment.data.mocks.Transaction
+import com.timife.vpdmoneyassessment.utils.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface AccountsRepository {
 
-    fun makeTransfer(sender: Account, receiver: Account): Result<String>
+    suspend fun makeTransfer(
+        senderAcct: String,
+        receiverAcct: String,
+        amount: Double,
+        transaction: Transaction
+    ): Resource<String>
 
-    fun getAllAccounts(): Flow<Account>
+    fun getAllAccounts(): Flow<Resource<List<Account>>>
 
-    fun getAllTransactions(): Flow<Transaction>
+    fun getAllTransactions(): Flow<Resource<List<Transaction>>>
 }
