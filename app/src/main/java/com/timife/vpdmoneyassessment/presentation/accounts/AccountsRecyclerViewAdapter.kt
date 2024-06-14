@@ -1,10 +1,10 @@
 package com.timife.vpdmoneyassessment.presentation.accounts
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-
+import androidx.recyclerview.widget.RecyclerView
+import com.timife.vpdmoneyassessment.data.mocks.Account
 import com.timife.vpdmoneyassessment.databinding.FragmentAccountsItemBinding
 
 class AccountsRecyclerViewAdapter(
@@ -27,7 +27,7 @@ class AccountsRecyclerViewAdapter(
         val item = values[position]
         holder.accountName.text = item.accountName
         holder.accountNumber.text = item.accountNumber
-        holder.accountBalance.text = item.accountBalance
+        holder.accountBalance.text = item.accountBalance.toString()
     }
 
     override fun getItemCount(): Int = values.size

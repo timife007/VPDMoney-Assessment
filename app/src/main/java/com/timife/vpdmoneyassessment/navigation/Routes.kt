@@ -6,7 +6,8 @@ import androidx.navigation.createGraph
 import androidx.navigation.fragment.fragment
 import com.timife.vpdmoneyassessment.presentation.accounts.AccountsFragment
 import com.timife.vpdmoneyassessment.presentation.dashboard.DashboardFragment
-import com.timife.vpdmoneyassessment.presentation.login.LoginFragment
+import com.timife.vpdmoneyassessment.presentation.auth.login.LoginFragment
+import com.timife.vpdmoneyassessment.presentation.auth.signup.SignupFragment
 import com.timife.vpdmoneyassessment.presentation.summary.TransactionSummaryFragment
 import com.timife.vpdmoneyassessment.presentation.transfer.TransferFragment
 import kotlinx.serialization.Serializable
@@ -26,6 +27,9 @@ object TransactionSummary
 @Serializable
 object AccountManagement
 
+@Serializable
+object Signup
+
 fun navigationGraph(navController: NavController): NavGraph {
     return navController.createGraph(startDestination = Login) {
         fragment<LoginFragment, Login> {
@@ -41,6 +45,9 @@ fun navigationGraph(navController: NavController): NavGraph {
         }
 
         fragment<TransactionSummaryFragment, TransactionSummary> {
+        }
+
+        fragment<SignupFragment, Signup> {
         }
     }
 }

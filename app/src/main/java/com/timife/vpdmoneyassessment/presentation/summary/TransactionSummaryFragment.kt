@@ -9,7 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.timife.vpdmoneyassessment.databinding.FragmentTransactionSummaryBinding
 import com.timife.vpdmoneyassessment.navigation.Dashboard
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TransactionSummaryFragment : Fragment() {
     private lateinit var summaryBinding: FragmentTransactionSummaryBinding
 
@@ -24,6 +26,7 @@ class TransactionSummaryFragment : Fragment() {
         summaryBinding.confirmButton.setOnClickListener {
             navigateToDashboard()
         }
+
         return summaryBinding.root
     }
 
