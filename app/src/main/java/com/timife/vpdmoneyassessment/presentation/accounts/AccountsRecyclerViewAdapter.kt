@@ -25,9 +25,27 @@ class AccountsRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.accountName.text = item.accountName
-        holder.accountNumber.text = item.accountNumber
-        holder.accountBalance.text = item.accountBalance.toString()
+
+        holder.accountName.text = buildString {
+            append(item.accountFirstName)
+            append(" ")
+            append(item.accountLastName)
+        }
+        holder.accountNumber.text = buildString {
+            append(item.bank)
+            append(" * ")
+            append(item.accountNumber)
+        }
+        holder.accountBalance.text = buildString {
+            append("₦")
+            append(item.accountBalance)
+
+        }
+        holder.initials.text = buildString {
+            append(item.accountFirstName[0])
+            append(" ")
+            append(item.accountLastName[0])
+        }
     }
 
     override fun getItemCount(): Int = values.size
@@ -37,10 +55,7 @@ class AccountsRecyclerViewAdapter(
         val accountName: TextView = binding.accountName
         val accountNumber: TextView = binding.accountNumber
         val accountBalance: TextView = binding.accountBalance
-
-        override fun toString(): String {
-            return super.toString() + " '" + accountNumber.text + "'"
-        }
+        val initials: TextView = binding.initials
     }
 
 }
