@@ -14,10 +14,7 @@ This Fintech App demonstrates modern Android development with Hilt, Coroutines, 
 
 <img src="https://github.com/timife007/VPDMoney-Assessment/assets/59525449/59fce6e3-f302-49c1-805b-43815e21ab2c.png" width="400" height="800"/>
 
-<img src="https://github.com/timife007/VPDMoney-Assessment/assets/59525449/faa0fcd9-6c7c-447f-ac3e-aa1ec2062361.png" width="400" height="800"/>
-
-![transaction_summary_screen](https://github.com/timife007/VPDMoney-Assessment/assets/59525449/99155cde-4e2a-4697-b1e0-ca6522c7ab2a)
-
+<img src="https://github.com/timife007/VPDMoney-Assessment/assets/59525449/48cf5c83-d059-44a0-a013-b8aa67d6ba93.png" width="400" height="800"/>
 
 </p>
 
