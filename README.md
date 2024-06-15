@@ -20,10 +20,11 @@ This Fintech App demonstrates modern Android development with Hilt, Coroutines, 
 
 ## Tech stack & Open-source libraries
 - Minimum SDK level 24
-- [Kotlin](https://kotlinlang.org/) based, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
+- [Kotlin](https://kotlinlang.org/) based, LiveData, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
 - Jetpack
   - Lifecycle: Observe Android lifecycles and handle UI states upon the lifecycle changes.
   - ViewModel: Manages UI-related data holder and lifecycle aware. Allows data to survive configuration changes such as screen rotations.
+  - LiveData: An observable to keep data and state monitored and up to date in a lifecycle aware manner
   - DataBinding: Binds UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
   - Room: Constructs Database by providing an abstraction layer over SQLite to allow fluent database access.
   - [Hilt](https://dagger.dev/hilt/): for dependency injection.
@@ -36,7 +37,7 @@ This Fintech App demonstrates modern Android development with Hilt, Coroutines, 
 ## Architecture
 This app is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
 
-The overall architecture here is composed of three layers; the presentation layer, the domain layer, the data layer. Each layer has dedicated components and they have each different responsibilities, as defined below:
+The overall architecture here is composed of three layers; the presentation layer, the domain layer, the data layer according to the Clean Architecture paradigm. Each layer has dedicated components and they have each different responsibilities, as defined below:
 
 ### Presentation Layer
 The presentation layer consists of the ui components as well as the view models to control the lifecyle of the application.
@@ -46,5 +47,12 @@ The data Layer consists of repositories, which include business logic, such as q
 
 ### Domain
 The domain layer consists mainly of repostory interfaces and some business logic as followed by the clean architecure principles.
+
+## Prerequisites
+To build this project, you require:
+
+- Android Studio jelly fish
+- Gradle or AGP 8.4.2
+- Kotlin version 1.9.24
 
 
