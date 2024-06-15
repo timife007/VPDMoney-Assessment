@@ -72,7 +72,7 @@ class LoginFragment() : Fragment() {
                         val user = auth.currentUser
                         Toast.makeText(
                             requireActivity(),
-                            "$user successfully logged in",
+                            "Login Successful",
                             Toast.LENGTH_LONG
                         ).show()
                         navigateToDashboard()

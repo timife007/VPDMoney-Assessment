@@ -45,6 +45,7 @@ class TransactionSummaryFragment : Fragment() {
                 summaryBinding.confirmProgress.visibility = View.GONE
             }else if(it.success){
                 navigateToDashboard()
+                Toast.makeText(requireContext(), "Transfer Successful", Toast.LENGTH_SHORT).show()
             }
         }
         viewModel.senderDetails.observe(viewLifecycleOwner) {
