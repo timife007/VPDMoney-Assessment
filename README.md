@@ -28,6 +28,7 @@ This Fintech App demonstrates modern Android development with Hilt, Coroutines, 
   - DataBinding: Binds UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
   - Room: Constructs Database by providing an abstraction layer over SQLite to allow fluent database access.
   - [Hilt](https://dagger.dev/hilt/): for dependency injection.
+  - XML for UI design layout.
 - Architecture
   - MVVM Architecture (View - DataBinding - ViewModel - Model)
 - [ksp](https://github.com/google/ksp): Kotlin Symbol Processing API.
