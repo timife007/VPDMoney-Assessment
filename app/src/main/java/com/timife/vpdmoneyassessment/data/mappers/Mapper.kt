@@ -2,8 +2,8 @@ package com.timife.vpdmoneyassessment.data.mappers
 
 import com.timife.vpdmoneyassessment.data.entities.AccountEntity
 import com.timife.vpdmoneyassessment.data.entities.TransactionEntity
-import com.timife.vpdmoneyassessment.data.mocks.Account
-import com.timife.vpdmoneyassessment.data.mocks.Transaction
+import com.timife.vpdmoneyassessment.data.mockdata.Account
+import com.timife.vpdmoneyassessment.data.mockdata.Transaction
 
 fun Account.toAccountEntity(): AccountEntity {
     return AccountEntity(

@@ -1,4 +1,4 @@
-package com.timife.vpdmoneyassessment.data.mocks
+package com.timife.vpdmoneyassessment.data.mockdata
 
 data class Transaction(
     val sender: String?,

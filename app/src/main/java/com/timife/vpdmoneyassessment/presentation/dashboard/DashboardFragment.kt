@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.timife.vpdmoneyassessment.data.mocks.mockAccounts
+import com.timife.vpdmoneyassessment.data.mockdata.mockAccounts
 import com.timife.vpdmoneyassessment.databinding.FragmentDashboardBinding
 import com.timife.vpdmoneyassessment.navigation.AccountManagement
 import com.timife.vpdmoneyassessment.navigation.Transfer

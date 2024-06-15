@@ -1,14 +1,13 @@
 package com.timife.vpdmoneyassessment.data.repositories
 
-import android.util.Log
 import com.timife.vpdmoneyassessment.data.database.dao.AccountsDao
 import com.timife.vpdmoneyassessment.data.database.dao.TransactionDao
 import com.timife.vpdmoneyassessment.data.mappers.toAccount
 import com.timife.vpdmoneyassessment.data.mappers.toAccountEntity
 import com.timife.vpdmoneyassessment.data.mappers.toTransaction
 import com.timife.vpdmoneyassessment.data.mappers.toTransactionEntity
-import com.timife.vpdmoneyassessment.data.mocks.Account
-import com.timife.vpdmoneyassessment.data.mocks.Transaction
+import com.timife.vpdmoneyassessment.data.mockdata.Account
+import com.timife.vpdmoneyassessment.data.mockdata.Transaction
 import com.timife.vpdmoneyassessment.domain.repositories.AccountsRepository
 import com.timife.vpdmoneyassessment.utils.Resource
 import kotlinx.coroutines.flow.Flow
@@ -27,7 +26,6 @@ class AccountsRepositoryImpl @Inject constructor(
     ): Resource<String> {
         try {
             val sender = accountsDao.getAccount(senderAcct)
-            val receiver = accountsDao.getAccount(receiverAcct)
 
             if (sender.accountBalance < amount) {
                 return Resource.Error("Insufficient Funds to make transfer")
@@ -38,8 +36,6 @@ class AccountsRepositoryImpl @Inject constructor(
                 receiverAcct,
                 amount
             )
-            val transactionCheck = transaction.toTransactionEntity()
-            Log.d("HOPEFUL", transactionCheck.toString())
             transactionDao.insertTransaction(transaction.toTransactionEntity())
             return Resource.Success("Funds Successfully Transferred")
         } catch (e: Exception) {
@@ -51,7 +47,7 @@ class AccountsRepositoryImpl @Inject constructor(
         return flow {
             emit(Resource.Loading(true))
             try {
-                accountsDao.getALlAccounts().collect { accounts ->
+                accountsDao.getAllAccounts().collect { accounts ->
                     emit(Resource.Success(accounts.map {
                         it.toAccount()
                     }))
@@ -69,8 +65,6 @@ class AccountsRepositoryImpl @Inject constructor(
             emit(Resource.Loading(true))
             try {
                 transactionDao.getAllTransactions().collect { transactions ->
-                    Log.d("MIGHTY", transactions.toString())
-
                     emit(Resource.Success(transactions.map {
                         it.toTransaction()
                     }))

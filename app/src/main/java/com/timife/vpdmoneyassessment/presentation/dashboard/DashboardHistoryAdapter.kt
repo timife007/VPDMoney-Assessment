@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.timife.vpdmoneyassessment.data.mocks.Transaction
+import com.timife.vpdmoneyassessment.data.mockdata.Transaction
 import com.timife.vpdmoneyassessment.databinding.TransactHistoryListItemBinding
 
 class DashboardHistoryAdapter (

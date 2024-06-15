@@ -10,5 +10,5 @@ data class AccountEntity(
     val accountFirstName: String,
     val accountLastName: String,
     val bank: String,
-    val accountBalance: Int = 0
+    var accountBalance: Int = 0
 )

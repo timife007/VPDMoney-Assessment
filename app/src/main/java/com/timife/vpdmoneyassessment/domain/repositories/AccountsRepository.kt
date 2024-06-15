@@ -1,7 +1,7 @@
 package com.timife.vpdmoneyassessment.domain.repositories
 
-import com.timife.vpdmoneyassessment.data.mocks.Account
-import com.timife.vpdmoneyassessment.data.mocks.Transaction
+import com.timife.vpdmoneyassessment.data.mockdata.Account
+import com.timife.vpdmoneyassessment.data.mockdata.Transaction
 import com.timife.vpdmoneyassessment.utils.Resource
 import kotlinx.coroutines.flow.Flow
 

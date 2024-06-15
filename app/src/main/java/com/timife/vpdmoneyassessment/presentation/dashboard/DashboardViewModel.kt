@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.timife.vpdmoneyassessment.data.mocks.Transaction
+import com.timife.vpdmoneyassessment.data.mockdata.Transaction
 import com.timife.vpdmoneyassessment.domain.repositories.AccountsRepository
 import com.timife.vpdmoneyassessment.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.timife.vpdmoneyassessment.R
-import com.timife.vpdmoneyassessment.data.mocks.mockAccounts
+import com.timife.vpdmoneyassessment.data.mockdata.mockAccounts
 import com.timife.vpdmoneyassessment.databinding.FragmentTransferBinding
 import com.timife.vpdmoneyassessment.navigation.TransactionSummary
 import dagger.hilt.android.AndroidEntryPoint
@@ -150,7 +150,7 @@ class TransferFragment : Fragment() {
                 }
             })
 
-            setOnItemClickListener { parent, view, position, id ->
+            setOnItemClickListener { parent, _, position, _ ->
                 if (isSender) {
                     val selectedItem = parent.getItemAtPosition(position).toString()
                     viewModel.fetchAccountDetails(selectedItem)

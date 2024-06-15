@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.timife.vpdmoneyassessment.data.mocks.Account
+import com.timife.vpdmoneyassessment.data.mockdata.Account
 import com.timife.vpdmoneyassessment.databinding.FragmentAccountsItemBinding
 
 class AccountsRecyclerViewAdapter(
@@ -33,7 +33,7 @@ class AccountsRecyclerViewAdapter(
         }
         holder.accountNumber.text = buildString {
             append(item.bank)
-            append(" * ")
+            append("  ○  ")
             append(item.accountNumber)
         }
         holder.accountBalance.text = buildString {
