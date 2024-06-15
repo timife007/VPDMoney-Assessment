@@ -16,6 +16,9 @@ This Fintech App demonstrates modern Android development with Hilt, Coroutines, 
 
 <img src="https://github.com/timife007/VPDMoney-Assessment/assets/59525449/faa0fcd9-6c7c-447f-ac3e-aa1ec2062361.png" width="400" height="800"/>
 
+![transaction_summary_screen](https://github.com/timife007/VPDMoney-Assessment/assets/59525449/99155cde-4e2a-4697-b1e0-ca6522c7ab2a)
+
+
 </p>
 
 ## Tech stack & Open-source libraries
@@ -54,6 +57,7 @@ To build this project, you require:
 
 - Android Studio jelly fish
 - Gradle or AGP 8.4.2
-- Kotlin version 1.9.24
+- Kotlin version 1.9.24,
+- Clone the repository.
 
 
