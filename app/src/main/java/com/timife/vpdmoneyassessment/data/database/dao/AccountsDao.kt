@@ -38,5 +38,4 @@ interface AccountsDao {
         sendMoneyTo(receiverAcctNo, amount)
         deductMoneyFrom(senderAcctNo, amount)
     }
-
 }

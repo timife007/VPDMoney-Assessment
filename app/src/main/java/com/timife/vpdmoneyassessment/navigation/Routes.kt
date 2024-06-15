@@ -30,7 +30,7 @@ data class TransactionSummary(
     val receiverAcct: String,
     val amount: Int,
     val remark: String = ""
-):Parcelable
+) : Parcelable
 
 @Serializable
 object AccountManagement
@@ -41,15 +41,19 @@ object Signup
 fun navigationGraph(navController: NavController): NavGraph {
     return navController.createGraph(startDestination = Dashboard) {
         fragment<LoginFragment, Login> {
+            label = "Login"
         }
 
         fragment<DashboardFragment, Dashboard> {
+            label = "Dashboard"
         }
 
         fragment<AccountsFragment, AccountManagement> {
+            label = "AccountManagement"
         }
 
         fragment<TransferFragment, Transfer> {
+            label = "Transfer"
         }
 
         fragment<TransactionSummaryFragment, TransactionSummary> {
@@ -57,6 +61,7 @@ fun navigationGraph(navController: NavController): NavGraph {
         }
 
         fragment<SignupFragment, Signup> {
+            label = "Signup"
         }
     }
 }

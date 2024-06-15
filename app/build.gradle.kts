@@ -71,8 +71,24 @@ dependencies {
     implementation(libs.serialization)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
+    implementation(libs.splash.screen)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    testImplementation(libs.coroutine.test)
+    testImplementation(libs.junit)
+    testImplementation(libs.core.test)
+    testImplementation(libs.truth)
+    testImplementation(libs.turbine)
+    testImplementation(libs.mockk)
+
+
+
+    //Instrumentation Tests
+
+    androidTestImplementation(libs.truth)
+    androidTestImplementation(libs.coroutine.test)
+    androidTestImplementation(libs.core.test)
 }
