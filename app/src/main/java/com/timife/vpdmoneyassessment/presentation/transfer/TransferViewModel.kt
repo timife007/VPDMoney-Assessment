@@ -28,6 +28,7 @@ class TransferViewModel @Inject constructor(
         return false
     }
 
+
     fun fetchAccountDetails(accountNumber:String){
         viewModelScope.launch {
             val accountDetail = accountsRepository.getAccountDetail(accountNumber)

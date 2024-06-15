@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface TransactionDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertTransaction(
+    suspend fun insertTransaction(
         transaction: TransactionEntity,
     )
 

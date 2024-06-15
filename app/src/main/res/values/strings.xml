@@ -29,7 +29,7 @@
     <string name="account_number">ACCOUNT NUMBER</string>
     <string name="amount">₦ 0.00</string>
     <string name="amount_text">AMOUNT</string>
-    <string name="bal_n1_000_000">Bal: ₦ 1,000,000</string>
+    <string name="bal_n1_000_000">Bal: ₦ 0</string>
     <string name="n100_000">₦ 100,000</string>
     <string name="enter_a_remark">Enter a remark</string>
     <string name="remark">REMARK</string>
@@ -68,4 +68,10 @@
     <string name="oa">OA</string>
     <string name="destination_account">DESTINATION ACCOUNT</string>
     <string name="account_number_hint">Account Number</string>
+    <string name="invalid_source_acct">Please, Enter a valid source account</string>
+    <string name="invalid_dest_acct">Please, Enter a valid destination account</string>
+    <string name="insufficient_funds">Insufficient funds</string>
+    <string name="after_text">"AFTER TEXT: "</string>
+    <string name="before_text">"BEFORE_TEXT: "</string>
+    <string name="source_account">SOURCE ACCOUNT</string>
 </resources>

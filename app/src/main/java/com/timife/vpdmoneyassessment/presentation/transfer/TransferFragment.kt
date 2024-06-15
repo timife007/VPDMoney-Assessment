@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.timife.vpdmoneyassessment.R
 import com.timife.vpdmoneyassessment.data.mocks.mockAccounts
 import com.timife.vpdmoneyassessment.databinding.FragmentTransferBinding
 import com.timife.vpdmoneyassessment.navigation.TransactionSummary
@@ -34,6 +36,9 @@ class TransferFragment : Fragment() {
     ): View {
 
         transferBinding = FragmentTransferBinding.inflate(inflater, container, false)
+        transferBinding.backNav.setOnClickListener {
+            findNavController().navigateUp()
+        }
         senderArrayAdapter = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_dropdown_item_1line,
@@ -78,7 +83,7 @@ class TransferFragment : Fragment() {
                 TransactionSummary(
                     srcAcctTextInput.text.toString(),
                     acctNoTextInput.text.toString(),
-                    amountTextInput.text.toString().toInt(),
+                    amountTextInput.text.toString().toDouble().toInt(),
                     remarkTextInput.text.toString()
                 )
             )
@@ -89,15 +94,27 @@ class TransferFragment : Fragment() {
     //validate all transfer details
     private fun validateInputs(): Boolean {
         transferBinding.apply {
-            if (!viewModel.isAcctNoValid(acctNoTextInput.text.toString())) {
-                acctNoInputLayout.error = "Account does not exist"
+            if (!viewModel.isAcctNoValid(srcAcctTextInput.text.toString())) {
+                srcAcctTextInput.error = getString(R.string.invalid_source_acct)
+                toastMessage(getString(R.string.invalid_source_acct))
                 return false
-            } else if (!viewModel.isAcctNoValid(srcAcctTextInput.text.toString())) {
-                acctNoInputLayout.error = "Account does not exist"
+            } else if (!viewModel.isAcctNoValid(acctNoTextInput.text.toString())) {
+                acctNoTextInput.error = getString(R.string.invalid_dest_acct)
+                toastMessage(getString(R.string.invalid_dest_acct))
                 return false
-            } else if (amountTextInput.text.toString().toInt() > acctBalance) {
-                transferBinding.amountTextLayout.error = "Insufficient funds"
+            } else if (amountTextInput.text.isNullOrEmpty()) {
+                amountTextInput.error = "Please, enter a valid amount"
+                toastMessage("Please, enter a valid amount")
                 return false
+            } else if (acctNoTextInput.text.toString() == srcAcctTextInput.text.toString()) {
+                toastMessage("Accounts should not match")
+                return false
+            } else {
+                if (amountTextInput.text.toString().toDouble() > acctBalance) {
+                    amountTextInput.error = getString(R.string.insufficient_funds)
+                    toastMessage("Insufficient funds")
+                    return false
+                }
             }
         }
         return true
@@ -121,7 +138,7 @@ class TransferFragment : Fragment() {
                     count: Int,
                     after: Int
                 ) {
-                    Timber.tag("BEFORE_TEXT: ").d(s.toString())
+                    Timber.tag(context.getString(R.string.before_text)).d(s.toString())
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -129,7 +146,7 @@ class TransferFragment : Fragment() {
                 }
 
                 override fun afterTextChanged(s: Editable?) {
-                    Timber.tag("AFTER TEXT: ").d(s.toString())
+                    Timber.tag(context.getString(R.string.after_text)).d(s.toString())
                 }
             })
 
@@ -140,6 +157,10 @@ class TransferFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun toastMessage(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
 

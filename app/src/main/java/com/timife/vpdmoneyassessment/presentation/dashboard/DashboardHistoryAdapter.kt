@@ -4,9 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.timife.vpdmoneyassessment.R
 import com.timife.vpdmoneyassessment.data.mocks.Transaction
-import com.timife.vpdmoneyassessment.data.mocks.TransactionStatus
 import com.timife.vpdmoneyassessment.databinding.TransactHistoryListItemBinding
 
 class DashboardHistoryAdapter (
@@ -27,25 +25,18 @@ class DashboardHistoryAdapter (
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val item = values[position]
-            holder.transactionStatus.text = buildString {
-                append(item.transactionStatus.name)
+            holder.transactionDetail.text = buildString {
+                append(" Transfer from ")
+                append(item.sender)
+                append(" to ")
+                append(item.receiver)
             }
             holder.historyDate.text = item.date
             holder.time.text = item.time
-            holder.moneyInvolved.text = item.amount
-
-            holder.icon.apply {
-                when(item.transactionStatus){
-                    TransactionStatus.SUCCESSFUL -> {
-                        holder.icon.setImageResource(R.drawable.ic_sent)
-                    }
-                    TransactionStatus.FAILED -> {
-                        holder.icon.setImageResource(R.drawable.ic_failed)
-                    }
-                    TransactionStatus.PENDING -> {
-                        holder.icon.setImageResource(R.drawable.ic_pending)
-                    }
-                }
+            holder.moneyInvolved.text = buildString {
+                append("₦")
+                append(" ")
+                append(item.amount?.toDouble()?.toInt())
             }
         }
 
@@ -53,7 +44,7 @@ class DashboardHistoryAdapter (
 
         inner class ViewHolder(binding: TransactHistoryListItemBinding) :
             RecyclerView.ViewHolder(binding.root) {
-            val transactionStatus: TextView = binding.transactionHistoryDetail
+            val transactionDetail: TextView = binding.transactionHistoryDetail
             val historyDate: TextView = binding.transactionDate
             val moneyInvolved: TextView = binding.moneyInvolved
             val time: TextView = binding.historyTime

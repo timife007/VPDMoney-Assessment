@@ -47,58 +47,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:orientation="vertical"
-            tools:context=".presentation.transfer.TransferFragment">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
-
-                <LinearLayout
-                    android:id="@+id/limit_linear_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/limit_amount_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="24dp"
-                        android:text="@string/daily_transfer_limit"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/limit_amount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="24dp"
-                        android:layout_gravity="top"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/n100_000"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-
-                <TextView
-                    android:id="@+id/limit_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:text="@string/change_limit"
-                    android:textColor="@color/navy_blue"
-                    android:textSize="12sp"
-                    android:theme="@style/General.Text.Style"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -109,7 +58,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SOURCE ACCOUNT"
+                    android:text="@string/source_account"
                     android:textColor="@color/navy_blue"
                     android:textSize="14sp"
                     android:theme="@style/General.Text.Style" />
@@ -118,7 +67,8 @@
                     android:id="@+id/src_acct_input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/account_number_hint">
 
                     <AutoCompleteTextView
                         android:id="@+id/src_acct_text_input"
@@ -126,7 +76,6 @@
                         android:layout_height="match_parent"
                         android:background="@color/faded_grey"
                         android:paddingStart="10dp"
-                        android:theme="@style/General.Text.Style"
                         android:paddingEnd="10dp"
                         android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -158,8 +107,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/faded_grey"
+                        android:hint="@string/account_number_hint"
                         android:paddingStart="10dp"
-                        android:theme="@style/General.Text.Style"
                         android:paddingEnd="10dp"
                         android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -205,8 +154,8 @@
                         android:id="@+id/amount_text_input"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/faded_grey"
-                        android:hint="@string/amount" />
+                        android:inputType="numberDecimal"
+                        android:background="@color/faded_grey" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>

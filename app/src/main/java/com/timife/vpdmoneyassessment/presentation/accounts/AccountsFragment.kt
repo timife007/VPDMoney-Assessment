@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.timife.vpdmoneyassessment.databinding.FragmentAccountsListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,7 +25,7 @@ class AccountsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         accountsBinding = FragmentAccountsListBinding.inflate(inflater, container, false)
         val recyclerView = accountsBinding.accountsRecyclerview
 
@@ -41,6 +42,9 @@ class AccountsFragment : Fragment() {
                 accountsBinding.accountListProgress.visibility = View.GONE
                 Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
             }
+        }
+        accountsBinding.backNavButton.setOnClickListener {
+            findNavController().navigateUp()
         }
 
         return accountsBinding.root

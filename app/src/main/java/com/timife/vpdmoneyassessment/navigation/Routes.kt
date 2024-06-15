@@ -1,5 +1,6 @@
 package com.timife.vpdmoneyassessment.navigation
 
+import android.os.Parcelable
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.createGraph
@@ -10,6 +11,7 @@ import com.timife.vpdmoneyassessment.presentation.auth.signup.SignupFragment
 import com.timife.vpdmoneyassessment.presentation.dashboard.DashboardFragment
 import com.timife.vpdmoneyassessment.presentation.summary.TransactionSummaryFragment
 import com.timife.vpdmoneyassessment.presentation.transfer.TransferFragment
+import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -22,12 +24,13 @@ object Dashboard
 object Transfer
 
 @Serializable
+@Parcelize
 data class TransactionSummary(
     val senderAcct: String,
     val receiverAcct: String,
     val amount: Int,
-    val remark: String
-)
+    val remark: String = ""
+):Parcelable
 
 @Serializable
 object AccountManagement
@@ -50,6 +53,7 @@ fun navigationGraph(navController: NavController): NavGraph {
         }
 
         fragment<TransactionSummaryFragment, TransactionSummary> {
+            label = "TransactionSummary"
         }
 
         fragment<SignupFragment, Signup> {
