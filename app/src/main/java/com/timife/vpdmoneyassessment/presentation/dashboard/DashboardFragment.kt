@@ -47,6 +47,10 @@ class DashboardFragment : Fragment() {
                 Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
             }
         }
+
+        viewModel.sum.observe(viewLifecycleOwner) {
+            dashboardBinding.totalAcctBalance.text = it
+        }
         return dashboardBinding.root
     }
 

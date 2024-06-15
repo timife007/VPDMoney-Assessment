@@ -39,7 +39,7 @@ object AccountManagement
 object Signup
 
 fun navigationGraph(navController: NavController): NavGraph {
-    return navController.createGraph(startDestination = Dashboard) {
+    return navController.createGraph(startDestination = Login) {
         fragment<LoginFragment, Login> {
             label = "Login"
         }

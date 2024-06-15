@@ -48,7 +48,7 @@
     <string name="total_balance">Total Balance</string>
     <string name="naira_symbol">₦</string>
     <string name="n34_950"> 34,950</string>
-    <string name="card_number">****   ****   ****  7566</string>
+    <string name="card_number">****   ****   ****  ****</string>
     <string name="recent_transactions">Recent Transactions</string>
     <string name="transaction_item_icon">Transaction Item icon</string>
     <string name="sent_to_john_oluwafemi">Sent to John Oluwafemi</string>
@@ -66,6 +66,7 @@
     <string name="have_an_existing_account">Have an Existing Account?</string>
     <string name="create_your_account">Create your Account</string>
     <string name="oa">OA</string>
+    <string name="vm">VM</string>
     <string name="destination_account">DESTINATION ACCOUNT</string>
     <string name="account_number_hint">Account Number</string>
     <string name="invalid_source_acct">Please, Enter a valid source account</string>
@@ -74,4 +75,5 @@
     <string name="after_text">"AFTER TEXT: "</string>
     <string name="before_text">"BEFORE_TEXT: "</string>
     <string name="source_account">SOURCE ACCOUNT</string>
+    <string name="vpd_money">VPD Money</string>
 </resources>
