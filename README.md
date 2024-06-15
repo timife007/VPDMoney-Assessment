@@ -18,6 +18,9 @@ This Fintech App demonstrates modern Android development with Hilt, Coroutines, 
 
 </p>
 
+## Download
+Go to the [Releases](https://github.com/timife007/VPDMoney-Assessment/releases/download/initial/app-release.apk) to download the latest APK.
+
 ## Tech stack & Open-source libraries
 - Minimum SDK level 24
 - [Kotlin](https://kotlinlang.org/) based, LiveData, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
