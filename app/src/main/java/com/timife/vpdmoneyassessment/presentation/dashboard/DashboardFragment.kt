@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.timife.vpdmoneyassessment.data.mocks.mockAccounts
-import com.timife.vpdmoneyassessment.data.mocks.mockTransaction
 import com.timife.vpdmoneyassessment.databinding.FragmentDashboardBinding
 import com.timife.vpdmoneyassessment.navigation.AccountManagement
 import com.timife.vpdmoneyassessment.navigation.Transfer
@@ -30,22 +30,31 @@ class DashboardFragment : Fragment() {
         dashboardBinding.accountsButton.setOnClickListener { navigateToAccounts() }
         var totalBalance = 0
         mockAccounts.forEach {
-            totalBalance += it.accountBalance.toInt()
+            totalBalance += it.accountBalance
         }
         dashboardBinding.totalAcctBalance.text = totalBalance.toString()
 
-        // Set the adapter
-        with(recyclerView) {
-            adapter = DashboardHistoryAdapter(mockTransaction)
+        viewModel.transactions.observe(viewLifecycleOwner) {
+            if (it.loading) {
+                dashboardBinding.transactionListProgress.visibility = View.VISIBLE
+            } else if (it.data != null) {
+                with(recyclerView) {
+                    adapter = DashboardHistoryAdapter(it.data)
+                }
+                dashboardBinding.transactionListProgress.visibility = View.GONE
+            } else {
+                dashboardBinding.transactionListProgress.visibility = View.GONE
+                Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
+            }
         }
         return dashboardBinding.root
     }
 
-    private fun navigateToTransfer(){
+    private fun navigateToTransfer() {
         findNavController().navigate(Transfer)
     }
 
-    private fun navigateToAccounts(){
+    private fun navigateToAccounts() {
         findNavController().navigate(AccountManagement)
     }
 }

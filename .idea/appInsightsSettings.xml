@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.timife.vpdmoneyassessment" />
+                  <option name="mobileSdkAppId" value="1:945279698924:android:8802a36674355e5cc1a2c9" />
+                  <option name="projectId" value="vpdmoney-a904b" />
+                  <option name="projectNumber" value="945279698924" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

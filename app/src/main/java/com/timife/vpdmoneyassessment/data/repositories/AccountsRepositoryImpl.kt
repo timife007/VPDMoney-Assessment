@@ -38,6 +38,8 @@ class AccountsRepositoryImpl @Inject constructor(
                 receiverAcct,
                 amount
             )
+            val transactionCheck = transaction.toTransactionEntity()
+            Log.d("HOPEFUL", transactionCheck.toString())
             transactionDao.insertTransaction(transaction.toTransactionEntity())
             return Resource.Success("Funds Successfully Transferred")
         } catch (e: Exception) {
@@ -67,6 +69,8 @@ class AccountsRepositoryImpl @Inject constructor(
             emit(Resource.Loading(true))
             try {
                 transactionDao.getAllTransactions().collect { transactions ->
+                    Log.d("MIGHTY", transactions.toString())
+
                     emit(Resource.Success(transactions.map {
                         it.toTransaction()
                     }))
@@ -80,7 +84,10 @@ class AccountsRepositoryImpl @Inject constructor(
 
     override suspend fun saveAccounts(accounts: List<Account>) {
         val accountEntities = accounts.map { it.toAccountEntity() }
-        Log.d("BIG ERROR", accountEntities.toString())
         accountsDao.upsertAccounts(accountEntities)
+    }
+
+    override suspend fun getAccountDetail(accountNumber: String) : Account{
+        return accountsDao.getAccount(accountNumber).toAccount()
     }
 }
