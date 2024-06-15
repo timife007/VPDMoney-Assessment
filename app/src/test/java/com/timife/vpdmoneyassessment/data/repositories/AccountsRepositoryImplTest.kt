@@ -10,7 +10,7 @@ import com.timife.vpdmoneyassessment.data.entities.AccountEntity
 import com.timife.vpdmoneyassessment.data.entities.TransactionEntity
 import com.timife.vpdmoneyassessment.data.mappers.toAccount
 import com.timife.vpdmoneyassessment.data.mappers.toTransaction
-import com.timife.vpdmoneyassessment.data.mocks.Transaction
+import com.timife.vpdmoneyassessment.data.mockdata.Transaction
 import com.timife.vpdmoneyassessment.utils.Resource
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest

@@ -2,7 +2,7 @@ package com.timife.vpdmoneyassessment.presentation.auth.signup
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.timife.vpdmoneyassessment.data.mocks.mockAccounts
+import com.timife.vpdmoneyassessment.data.mockdata.mockAccounts
 import com.timife.vpdmoneyassessment.domain.repositories.AccountsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
