@@ -150,7 +150,7 @@ class TransferFragment : Fragment() {
                 }
             })
 
-            setOnItemClickListener { parent, view, position, id ->
+            setOnItemClickListener { parent, _, position, _ ->
                 if (isSender) {
                     val selectedItem = parent.getItemAtPosition(position).toString()
                     viewModel.fetchAccountDetails(selectedItem)

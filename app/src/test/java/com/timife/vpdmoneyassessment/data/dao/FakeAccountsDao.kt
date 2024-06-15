@@ -7,10 +7,11 @@ import kotlinx.coroutines.flow.flow
 
 class FakeAccountsDao() : AccountsDao {
 
-    private var fakeDatabase = emptyList<AccountEntity>()
+    private var fakeDatabase = mutableListOf<AccountEntity>()
 
     override suspend fun upsertAccounts(accounts: List<AccountEntity>) {
-        fakeDatabase = fakeDatabase + accounts
+//        fakeDatabase = mutableListOf()
+        fakeDatabase.addAll(accounts)
     }
 
     override suspend fun getAccount(acctNo: String): AccountEntity {
@@ -21,27 +22,44 @@ class FakeAccountsDao() : AccountsDao {
     }
 
     override suspend fun deductMoneyFrom(acctNo: String, moneySent: Double) {
-        fakeDatabase.forEach {
-            if(it.accountNumber == acctNo){
-                val newEntity = it.copy(accountBalance = it.accountBalance - moneySent.toInt())
-                fakeDatabase + newEntity
+        for (i in fakeDatabase.indices) {
+            if (fakeDatabase[i].accountNumber == acctNo) {
+                var temp = fakeDatabase[i]
+                temp = temp.copy(accountBalance = temp.accountBalance - moneySent.toInt())
+                fakeDatabase.removeAt(i)
+                fakeDatabase.add(temp)
+                break
             }
         }
     }
 
     override suspend fun sendMoneyTo(acctNo: String, moneyReceived: Double) {
-        fakeDatabase.forEach {
-            if(it.accountNumber == acctNo){
-                val newEntity = it.copy(accountBalance = it.accountBalance + moneyReceived.toInt())
-                fakeDatabase + newEntity
+        for(j in fakeDatabase.indices){
+            if(fakeDatabase[j].accountNumber == acctNo){
+                var temp = fakeDatabase[j]
+                temp = temp.copy(accountBalance = temp.accountBalance + moneyReceived.toInt())
+                fakeDatabase.removeAt(j)
+                fakeDatabase.add(temp)
+                break
             }
         }
     }
 
-    override fun getALlAccounts(): Flow<List<AccountEntity>> {
+
+    override fun getAllAccounts(): Flow<List<AccountEntity>> {
         return flow {
             emit(fakeDatabase)
         }
     }
+
+    override suspend fun performMoneyTransfer(
+        senderAcctNo: String,
+        receiverAcctNo: String,
+        amount: Double
+    ) {
+        sendMoneyTo(receiverAcctNo, amount)
+        deductMoneyFrom(senderAcctNo, amount)
+    }
+
 
 }

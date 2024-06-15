@@ -9,6 +9,7 @@ import com.timife.vpdmoneyassessment.data.database.AccountsDB
 import com.timife.vpdmoneyassessment.data.database.dao.AccountsDao
 import com.timife.vpdmoneyassessment.data.entities.AccountEntity
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -40,16 +41,16 @@ class AccountDbTest {
     }
 
     @Test
-    suspend fun upsertAccounts() {
+    fun upsertAccounts() = runTest{
         dao.upsertAccounts(accountEntities)
-        assertThat(dao.getALlAccounts()).isNotNull()
+        assertThat(dao.getAllAccounts()).isNotNull()
     }
 
 
     @Test
-    suspend fun getAllAccounts() {
+    fun getAllAccounts() = runTest {
         dao.upsertAccounts(accountEntities)
-        assertThat(dao.getALlAccounts().first()).isNotNull()
+        assertThat(dao.getAllAccounts().first()).isNotNull()
     }
 
     companion object {

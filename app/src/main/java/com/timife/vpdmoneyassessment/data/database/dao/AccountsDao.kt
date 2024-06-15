@@ -27,7 +27,7 @@ interface AccountsDao {
     suspend fun sendMoneyTo(acctNo: String, moneyReceived: Double)
 
     @Query("SELECT * FROM account_entity")
-    fun getALlAccounts(): Flow<List<AccountEntity>>
+    fun getAllAccounts(): Flow<List<AccountEntity>>
 
     @Transaction
     suspend fun performMoneyTransfer(
