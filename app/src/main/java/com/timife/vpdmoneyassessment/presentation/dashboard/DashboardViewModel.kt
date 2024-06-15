@@ -19,8 +19,38 @@ class DashboardViewModel @Inject constructor(
     private val _transactions = MutableLiveData<TransactionListState>()
     val transactions: LiveData<TransactionListState> = _transactions
 
+    private val _sum = MutableLiveData<String>()
+    val sum: LiveData<String> = _sum
+
     init {
         getAllTransactions()
+        getSum()
+    }
+
+    private fun getSum() {
+        viewModelScope.launch {
+            accountsRepository.getAllAccounts().collect {
+                when (it) {
+                    is Resource.Error -> {
+                        if (it.data != null) {
+                            _sum.value = "**** **** **** ****"
+                        }
+                    }
+
+                    is Resource.Loading -> {
+                        _sum.value = "**** **** **** ****"
+                    }
+
+                    is Resource.Success -> {
+                        var sum = 0
+                        it.data?.forEach { account ->
+                            sum += account.accountBalance
+                        }
+                        _sum.value = sum.toString()
+                    }
+                }
+            }
+        }
     }
 
     private fun getAllTransactions() {
@@ -49,5 +79,5 @@ class DashboardViewModel @Inject constructor(
 data class TransactionListState(
     val loading: Boolean = false,
     val data: List<Transaction>? = emptyList(),
-    val error: String? = null
+    val error: String? = null,
 )
